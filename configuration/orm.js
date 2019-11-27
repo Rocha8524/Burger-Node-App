@@ -16,14 +16,14 @@ function printQuestionMarks(num) {
 function objectToSql(ob) {
     var array = [];
 
-    // loop through the keys and push the key/value as a string int arr
+    // Loop through the keys and push the key/value as a string int arr
     for (var key in object) {
         var value = ob[key];
 
-        // check to skip hidden properties
+        // Check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
 
-            // if string with spaces, add quotations
+            // If string has spaces, add quotations
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
@@ -65,7 +65,7 @@ var orm = {
     },
 
     // An example of objColVals would be {name: panther, sleepy: true}
-    update: function (table, objColVals, condition, cb) {
+    update: function (table, objColVals, condition, callback) {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
@@ -79,7 +79,7 @@ var orm = {
                 throw err;
             }
 
-            cb(result);
+            callback(result);
         });
     },
 
