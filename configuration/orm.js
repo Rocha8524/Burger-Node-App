@@ -2,10 +2,10 @@
 var connection = require("../config/connection.js");
 
 // Helper function for SQL syntax.
-function printQuestionMarks(num) {
+function printQuestionMarks(number) {
     var array = [];
 
-    for (var i = 0; i < num; i++) {
+    for (var i = 0; i < number; i++) {
         array.push("?");
     }
 
@@ -13,15 +13,15 @@ function printQuestionMarks(num) {
 }
 
 // Helper function to convert object key/value pairs to SQL syntax
-function objectToSql(ob) {
+function objectToSql(object) {
     var array = [];
 
     // Loop through the keys and push the key/value as a string int arr
     for (var key in object) {
-        var value = ob[key];
+        var value = object[key];
 
         // Check to skip hidden properties
-        if (Object.hasOwnProperty.call(ob, key)) {
+        if (Object.hasOwnProperty.call(object, key)) {
 
             // If string has spaces, add quotations
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
@@ -58,13 +58,13 @@ var burgerOrm = {
 
         console.log(queryString);
 
-        connection.query(queryString, valuess, function (error, result) {
+        connection.query(queryString, values, function (error, result) {
             if (error) throw error;
             callback(result);
         });
     },
 
-    // An example of objColVals would be {name: panther, sleepy: true}
+    // An example of objColVals would be {name: Big Mac, devoured: true}
     updateOne: function (table, objColVals, condition, callback) {
         var queryString = "UPDATE " + table;
 
@@ -74,9 +74,9 @@ var burgerOrm = {
         queryString += condition;
 
         console.log(queryString);
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
+        connection.query(queryString, function (error, result) {
+            if (error) {
+                throw error;
             }
 
             callback(result);

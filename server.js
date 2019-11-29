@@ -1,5 +1,7 @@
 // Dependencies
 var express = require("express");
+var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
 
 // Sets up the Express App
 var app = express();
@@ -9,8 +11,10 @@ var PORT = process.env.PORT || 8080;
 app.use(express.static("app/public"));
 
 // Parse application body
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Override with POST having ?_method=DELETE
+app.use(methodOverride("_method"));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
