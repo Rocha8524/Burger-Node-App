@@ -1,5 +1,5 @@
 // Import MySQL connection.
-var connection = require("../config/connection.js");
+var connection = require("../configuration/connection.js");
 
 // Helper function for SQL syntax.
 function printQuestionMarks(number) {
@@ -46,7 +46,7 @@ var burgerOrm = {
             callback(result);
         });
     },
-    insertOne: function (table, columns, values, callback) {
+    createOne: function (table, columns, values, callback) {
         var queryString = "INSERT INTO " + table;
 
         queryString += " (";
