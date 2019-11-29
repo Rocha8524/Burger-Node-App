@@ -36,8 +36,8 @@ function objectToSql(ob) {
 }
 
 // Object for all our SQL statement functions.
-var orm = {
-    all: function (tableInput, callback) {
+var burgerOrm = {
+    selectAll: function (tableInput, callback) {
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (error, result) {
             if (error) {
@@ -46,7 +46,7 @@ var orm = {
             callback(result);
         });
     },
-    create: function (table, columns, values, callback) {
+    insertOne: function (table, columns, values, callback) {
         var queryString = "INSERT INTO " + table;
 
         queryString += " (";
@@ -65,7 +65,7 @@ var orm = {
     },
 
     // An example of objColVals would be {name: panther, sleepy: true}
-    update: function (table, objColVals, condition, callback) {
+    updateOne: function (table, objColVals, condition, callback) {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
@@ -84,7 +84,7 @@ var orm = {
     },
 
     // Delete table from database and website
-    delete: function (table_name, id, callback) {
+    deleteOne: function (table_name, id, callback) {
         var sql_command = `DELETE FROM ${table_name} WHERE id = ${id}`;
         console.log(sql_command);
 
@@ -96,4 +96,4 @@ var orm = {
 };
 
 // Export the orm object for the model (cat.js).
-module.exports = orm;
+module.exports = burgerOrm;
