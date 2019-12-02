@@ -1,18 +1,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 , text-center">
-            <img src="https://media.giphy.com/media/10eqvP7UGR34TC/giphy.gif" alt="Munching on those burgers">
+            <img src="https://media.giphy.com/media/10eqvP7UGR34TC/giphy.gif" alt="Munching on those burgers"
+                width="200" height="200">
             <h3>Eat-That-Burger Baby</h3>
         </div>
     </div>
-
-    <br>
+    <hr>
 
     <div class="row">
-        <div class="col-md-6">
-            <img src="https://media.giphy.com/media/zNsrnGVpCJMOc/giphy.gif" alt="Enjoy your burger">
-            <h3>Burgers ready for pick-up</h3>
-
+        <div class="col-md-6 , text-center">
+            <h4>Burgers ready for pick-up</h4>
+            <img src="https://media.giphy.com/media/zNsrnGVpCJMOc/giphy.gif" alt="Enjoy your burger" width="200"
+                height="200">
             <ul>
                 {{#each burgers}}
                 {{#unless this.devoured}}
@@ -31,13 +31,12 @@
                     {{/unless}}
                     {{/each}}
             </ul>
-
         </div>
 
-        <div class="col-md-6">
-            <img src="https://media.giphy.com/media/XbAYSN0jUBQbe/giphy.gif" alt="Eat them all">
-            <h3>Burgers that are eaten</h3>
-
+        <div class="col-md-6 , text-center">
+            <h4>Burgers that have been ordered</h4>
+            <img src="https://media.giphy.com/media/XbAYSN0jUBQbe/giphy.gif" alt="Eat them all" width="200"
+                height="200">
             <ul>
                 {{#each burgers}}
                 {{#if this.devoured}}
@@ -48,26 +47,25 @@
                 {{/if}}
                 {{/each}}
             </ul>
-
         </div>
-
     </div>
+    <hr>
 
-    <div class="row">
+    <div class="row , text-center">
         <div class="col-md-12">
-            <img src="https://media.giphy.com/media/ud6EmjRF8CICI/giphy.gif" alt="Make that burger">
             <h3>Add a Burger</h3>
+            <img src="https://media.giphy.com/media/ud6EmjRF8CICI/giphy.gif" alt="Make that burger" width="200"
+                height="200">
 
-            <form>
+            <form class="update-form" action="/" method="POST">
                 <div class="form-group">
-                    <p>Enter a burger you want to order and the click the submit button when you made your choice<p><br>
-                            <input type="text" id="burger-order">
+                    <p>Enter a burger you want to order and the click the submit button when you made your choice</p>
                 </div>
-
+                <input type="text" id="burger-order"><br><br>
                 <button type="submit" class="btn btn-primary">Submit Your Order</button>
             </form>
         </div>
-    </div>
+    </div><br>
 
     <footer class="jumbotron , text-center">
         <h3>© 2019 Alexander Rocha</h3>
