@@ -79,6 +79,18 @@ var burgerOrm = {
             callback(result);
         });
     },
+
+    // Delete table from database and website	
+    delete: function (table_name, id, callback) {
+        
+        var sql_command = `DELETE FROM ${table_name} WHERE id = ${id}`;
+        console.log(sql_command);
+
+        connection.query(sql_command, function (error, result) {
+            if (error) throw error;
+            callback(result);
+        });
+    }
 };
 
 // Export the orm object for the model (burger.js).
