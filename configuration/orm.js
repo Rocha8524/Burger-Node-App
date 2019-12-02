@@ -22,11 +22,6 @@ function objectToSql(object) {
 
         // Check to skip hidden properties
         if (Object.hasOwnProperty.call(object, key)) {
-
-            // If string has spaces, add quotations
-            if (typeof value === "string" && value.indexOf(" ") >= 0) {
-                value = "'" + value + "'";
-            }
             array.push(key + "=" + value);
         }
     }
@@ -59,7 +54,9 @@ var burgerOrm = {
         console.log(queryString);
 
         connection.query(queryString, values, function (error, result) {
-            if (error) throw error;
+            if (error) {
+                throw error;
+            }
             callback(result);
         });
     },
@@ -82,17 +79,6 @@ var burgerOrm = {
             callback(result);
         });
     },
-
-    // Delete table from database and website
-    delete: function (table_name, id, callback) {
-        var sql_command = `DELETE FROM ${table_name} WHERE id = ${id}`;
-        console.log(sql_command);
-
-        connection.query(sql_command, function (error, result) {
-            if (error) throw error;
-            callback(result);
-        });
-    }
 };
 
 // Export the orm object for the model (burger.js).

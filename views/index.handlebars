@@ -27,9 +27,9 @@
                     <form action="/{{this.id}}?_method=DELETE" method="POST">
                         <button type="submit">Delete</button>
                     </form>
-
-                    {{/unless}}
-                    {{/each}}
+                </li>
+                {{/unless}}
+                {{/each}}
             </ul>
         </div>
 
@@ -49,19 +49,23 @@
             </ul>
         </div>
     </div>
+
     <hr>
 
     <div class="row , text-center">
         <div class="col-md-12">
+            
             <h3>Add a Burger</h3>
             <img src="https://media.giphy.com/media/ud6EmjRF8CICI/giphy.gif" alt="Make that burger" width="200"
                 height="200">
 
             <form class="update-form" action="/" method="POST">
                 <div class="form-group">
+                    <br>
                     <p>Enter a burger you want to order and the click the submit button when you made your choice</p>
+                    <input type="text" id="burger-order">
                 </div>
-                <input type="text" id="burger-order"><br><br>
+                <br>
                 <button type="submit" class="btn btn-primary">Submit Your Order</button>
             </form>
         </div>
