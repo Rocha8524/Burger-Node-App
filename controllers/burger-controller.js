@@ -16,7 +16,7 @@ router.get("/", function (request, response) {
     });
 });
 
-router.post("/api/burgers", function (request, response) {
+router.post("/", function (request, response) {
     burger.create([
         "burger_name", "devoured"
     ], [
@@ -27,7 +27,7 @@ router.post("/api/burgers", function (request, response) {
     });
 });
 
-router.put("/api/burgers/:id", function (request, response) {
+router.put("/:id", function (request, response) {
     var condition = "id = " + request.params.id;
 
     console.log("condition", condition);
