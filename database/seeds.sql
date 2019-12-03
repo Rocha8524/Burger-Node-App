@@ -1,6 +1,8 @@
-INSERT INTO burgers
-    (burger_name , devoured)
+SELECT * FROM burgers_db.burgers;
 
-VALUES
-    ("Jalepeno Cheeseburger" , 0),
-    ("Rodeo Cheeseburger" , 0);
+INSERT INTO burgers (burger_name, devoured) 
+
+VALUES 
+("Jalepeno Cheeseburger" , true),
+("Rodeo Cheeseburger" , true),
+("Chipotle Turkey Burger" , true);

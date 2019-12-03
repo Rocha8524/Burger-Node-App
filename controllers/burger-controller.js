@@ -40,7 +40,7 @@ router.put("/api/burgers/:id", function (request, response) {
 });
 
 router.delete("/:id", function (request, response) {
-    var condition = "id = " + req.params.id;
+    var condition = "id = " + request.params.id;
     burger.delete(condition, function () {
         response.redirect("/");
     });
