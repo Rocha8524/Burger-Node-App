@@ -1,0 +1,40 @@
+li {
+    padding: 15px;
+    margin: 15px;
+    background: #ffffff;
+    list-style: none;
+    text-align: center;
+  }
+
+  ul {
+      list-style: none;
+      text-align: center;
+  }
+  
+  .create-update-form {
+    padding: 20px;
+    margin: 20px;
+    background: #eceff1;
+    border: 1px black solid;
+  }
+  
+  .btn-primary {
+      border-radius: 10px;
+  }
+  
+  body { 
+      background-image: url(https://data.whicdn.com/images/125261594/original.jpg) ;
+      background-position: center;
+      background-repeat:  no-repeat;
+      background-attachment: fixed;
+      background-size:  cover;
+      background-color: #000000;  
+  }
+  
+  div, body{
+      margin: 0;
+      padding: 0;
+      font-family: exo, sans-serif;
+      color: black;
+  }
+  
