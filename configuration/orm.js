@@ -35,9 +35,7 @@ var burgerOrm = {
     all: function (tableInput, callback) {
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (error, result) {
-            if (error) {
-                throw error;
-            }
+            if (error) throw error;
             callback(result);
         });
     },
@@ -54,9 +52,7 @@ var burgerOrm = {
         console.log(queryString);
 
         connection.query(queryString, values, function (error, result) {
-            if (error) {
-                throw error;
-            }
+            if (error) throw error;
             callback(result);
         });
     },
@@ -72,10 +68,7 @@ var burgerOrm = {
 
         console.log(queryString);
         connection.query(queryString, function (error, result) {
-            if (error) {
-                throw error;
-            }
-
+            if (error) throw error;
             callback(result);
         });
     },
