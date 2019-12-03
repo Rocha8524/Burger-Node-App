@@ -82,7 +82,7 @@ var burgerOrm = {
 
     // Delete table from database and website	
     delete: function (table_name, id, callback) {
-        
+
         var sql_command = `DELETE FROM ${table_name} WHERE id = ${id}`;
         console.log(sql_command);
 
