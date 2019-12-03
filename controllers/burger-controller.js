@@ -41,8 +41,16 @@ router.put("/:id", function (request, response) {
 
 router.delete("/:id", function (request, response) {
     var condition = "id = " + request.params.id;
-    burger.delete(condition, function () {
-        response.redirect("/");
+
+    console.log("condition", condition);
+
+    burger.delete(condition, function (result) {
+        if (result.affectedRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return response.status(404).end();
+        } else {
+            response.redirect("/");
+        }
     });
 });
 

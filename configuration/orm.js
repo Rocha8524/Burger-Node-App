@@ -74,12 +74,12 @@ var burgerOrm = {
     },
 
     // Delete table from database and website	
-    delete: function (table_name, id, callback) {
+    delete: function (table, condition, callback) {
+        var queryString = "DELETE FROM " + table;
+        queryString += " WHERE ";
+        queryString += condition;
 
-        var sql_command = `DELETE FROM ${table_name} WHERE id = ${id}`;
-        console.log(sql_command);
-
-        connection.query(sql_command, function (error, result) {
+        connection.query(queryString, function (error, result) {
             if (error) throw error;
             callback(result);
         });

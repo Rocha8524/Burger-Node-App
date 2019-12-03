@@ -1,8 +1,5 @@
-SELECT * FROM burgers_db.burgers;
+INSERT INTO burgers VALUES ('Jalepeno Cheeseburger',1);
+INSERT INTO burgers VALUES ('Rodeo Cheeseburger',1);
+INSERT INTO burgers VALUES ('Chipotle Turkey Burger',1);
+INSERT INTO burgers VALUES ('Big Mac',1);
 
-INSERT INTO burgers (burger_name, devoured) 
-
-VALUES 
-("Jalepeno Cheeseburger" , true),
-("Rodeo Cheeseburger" , true),
-("Chipotle Turkey Burger" , true);
