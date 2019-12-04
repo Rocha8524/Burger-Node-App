@@ -1,7 +1,12 @@
 li {
     padding: 15px;
     margin: 15px;
-    background: #ffffff;
+    background-image: url(https://image.freepik.com/free-vector/burger-seamless-pattern-background-vector-design_22159-34.jpg);
+    background-position: center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #000000;  
     list-style: none;
     text-align: center;
   }
